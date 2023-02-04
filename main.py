@@ -9,6 +9,7 @@ print(sorted(cars,reverse=True))
 #sorted 临时修改顺序的方法
 cars.reverse()
 print(cars)
-len(cars);
-
+print(len(cars))
+print(cars[-1])\
+    ;
 
