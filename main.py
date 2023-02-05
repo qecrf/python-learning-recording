@@ -4,6 +4,8 @@
 # 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置
 from typing import List
 
+'''
+
 cars = ['a', 'c', 'z', 'e']
 print(cars)
 print(sorted(cars))
@@ -254,4 +256,114 @@ print('%d / %d = %f' % (a, b, a / b))
 print('%d // %d = %d' % (a, b, a // b))
 print('%d %% %d = %d' % (a, b, a % b))
 
+
+# message = input('tell me something:')
+# print(message)
+# a = 10
+# b = 3
+# a += b        # 相当于：a = a + b
+# a *= a + 2    # 相当于：a = a * (a + 2)
+# print(a)      # 算一下这里会输出什么
+#
+# oe=input('odd even')
+# oe=int(oe)
+# if oe % 2 == 0:
+#     print('even')
+# else:
+#     print('odd')
+# print(oe)
+
+# current_number = 1 #while 循环
+# while current_number <= 5:
+#     print(current_number)
+#     current_number += 1
+# message = ''
+# while message != 'quit':
+#     message = input("复读机，输入quit 退出")
+#     if message != 'quit':
+#         print(message)
+
+
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue #只要奇数
+    print(current_number)
+
+sandwich_order = ['a','b','c','a','a']
+
+finished_sandwiches = []
+for x in sandwich_order:  #因为在循环中更改列表的大小，循环的范围也会改变。
+    if x == 'a':
+        sandwich_order.remove('a')
+print(sandwich_order)
+
+sandwich_order = ['a','b','c','a','a']
+while 'a' in sandwich_order:  #此处判断多次，所以避免了循环范围的改变
+    sandwich_order.remove('a')
+print(sandwich_order)
+
+if 'a' in sandwich_order:
+    print("还有a")
+else:
+    print("a无了")
+
+while sandwich_order:
+    fresh_sandwich = sandwich_order.pop()
+    print(fresh_sandwich+" sandwich is finished.")
+    finished_sandwiches.append(fresh_sandwich)
+
+print("here is your sandwiches")
+for finished_sandwich in finished_sandwiches:
+    print(finished_sandwich.title() + " sandwich")
+
+# active = True
+# while active:
+#     message = input()
+#     if message == 'quit':
+#         active = False
+#     else:
+#         print(message)
+
+current_number =0
+while current_number < 10:
+    if current_number % 2 != 0:
+         print(current_number)
+    current_number += 1
+
+def greet_user():
+    """xiansh"""
+    print("hello")
+greet_user()
+'''
+
+def greet_user(username):
+    print("hello,"+username.title()+"!")
+
+greet_user('jesse')
+
+
+a = ''
+if bool(a) == False:
+    print("false")
+
+def build_name(first,last,age=''):
+    person={'first': first,'last':last}
+    if age:
+        person['age'] = age
+    return person
+
+muscian = build_name('jimi','ffff')
+print(muscian)
+
+g = float(input("77.5555"))
+c = (g - 32) / 1.8
+print(f'{g:.2f} 华氏度')
+'''太重要了这里, 一定要有一个点在数据格式前面'''
+print('%.1f' %g)
+g = float(input('请输入华氏温度: '))
+c = (g - 32) / 1.8
+print('%.1f华氏度 = %.1f摄氏度' % (g, c))
+print(f'{g:.1f}华氏度 = {c:.1f}摄氏度')
 
