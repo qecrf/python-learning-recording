@@ -2,6 +2,8 @@
 
 # 按 Shift+F10 执行或将其替换为您的代码。
 # 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置
+import math
+import sys
 from typing import List
 
 '''
@@ -338,32 +340,524 @@ def greet_user():
 greet_user()
 '''
 
-def greet_user(username):
-    print("hello,"+username.title()+"!")
+# def greet_user(username):
+#     print("hello,"+username.title()+"!")
+#
+# greet_user('jesse')
+#
+#
+# a = ''
+# if bool(a) == False:
+#     print("false")
+#
+# def build_name(first,last,age=''):
+#     person={'first': first,'last':last}
+#     if age:
+#         person['age'] = age
+#     return person
+#
+# muscian = build_name('jimi','ffff')
+# print(muscian)
+#
+# g = float(input("77.5555"))
+# c = (g - 32) / 1.8
+# print(f'{g:.2f} 华氏度')
+# '''太重要了这里, 一定要有一个点在数据格式前面'''
+# print('%.1f' %g)
+# g = float(input('请输入华氏温度: '))
+# c = (g - 32) / 1.8
+# print('%.1f华氏度 = %.1f摄氏度' % (g, c))
+# print(f'{g:.1f}华氏度 = {c:.1f}摄氏度')
+#
+# row = int(input('请输入行数: '))
+#
+# for i in range(row):    #最后一个值不赋予 ，所以相当于你输入数字多少就循环多少次，此处已经计算了0的时候
+#     for j in range(row): #全都是从零开始，当然也可以想象从1开始，带上最后一个值，前提是要循环之间互相嵌套作为变量而不是作为数值
+#         if j < row - i - 1:
+#             print(' ', end='')
+#         else:
+#             print('*', end='')
+#     print()
+#
+# for i in range(row):
+#     for _ in range(i+1):
+#         print('*',end="")
+#     print()
+# c = 2568//100
+# print('%dchangdu' %(c))
+# print('%.1fcccc'%c)
+'''
+for x in range(0, 20):
+    for y in range(0, 33):
+        z = 100 - x - y
+        if 5 * x + 3 * y + z / 3 == 100:
+            print("公鸡：%d只，母鸡：%d只，小鸡%d只" % (x, y, z))
 
-greet_user('jesse')
+# 生成斐波那契数列
+num = int(input("fibonacci sequence top X:"))
+
+# 找出10000以内的完美数
+x = 1
+behind = 1
+for _ in range(num):
+    if _ < 2:
+        print(1, end=",")
+    else:
+
+        for _ in range(num - 2):
+            behi2 = behind
+            behind = x
+            x = behind + behi2
+            print(x, end=",")
+        break
+print()
+'''
+'''
+def SuJduge(num):
+    is_prime = True
+    for i in range(2,int(math.sqrt(num))+1):   # for i in range(1,num//2):
+        if num %i  == 0:
+            is_prime = False
+            break
+    return is_prime
 
 
-a = ''
-if bool(a) == False:
-    print("false")
 
-def build_name(first,last,age=''):
-    person={'first': first,'last':last}
-    if age:
-        person['age'] = age
-    return person
 
-muscian = build_name('jimi','ffff')
-print(muscian)
 
-g = float(input("77.5555"))
-c = (g - 32) / 1.8
-print(f'{g:.2f} 华氏度')
-'''太重要了这里, 一定要有一个点在数据格式前面'''
-print('%.1f' %g)
-g = float(input('请输入华氏温度: '))
-c = (g - 32) / 1.8
-print('%.1f华氏度 = %.1f摄氏度' % (g, c))
-print(f'{g:.1f}华氏度 = {c:.1f}摄氏度')
+#
+#
+#
+#
+#
+#
+# def FacSum(m):
+#     sum = 0
+#     for i in range(1, m):
+#         if m % i == 0:
+#             sum += i
+#     return sum
+#
+#
+# yes = True
+# while yes:
+#     per = int(input("输入范围内的完美数:"))
+#     if per > 0:
+#         yes = False
+#     else:
+#         print('请输入正确范围')
+#
+# for _ in range(1, per+1):
+#     if _ == FacSum(_):
+#         print(_, end=',')
+#
+# print()
 
+# yes = True
+# while yes:
+#     su = int(input("输入范围内的素数:"))
+#     if su > 0:
+#         yes = False
+#     else:
+#         print('请输入正确范围')
+#
+
+su = int(input("输入范围内的素数:"))
+
+for i in range(2,su+1):
+    if SuJduge(i):
+        print(i,end=',')
+print()
+
+# 尝试计算
+# 根据前面提到的各个概率以及这一赌博的规则
+# 可以计算出掷骰方获胜的机会为 244/495，即 49．3％左右。
+# from random import randint
+#
+# money = 1000
+# top   = 1000
+# while money > 0:
+#     print('你的总资产为:', money)
+#     if money > top:
+#         top = money
+#     needs_go_on = False
+#     while True:
+#         debt = int(input('请下注: '))
+#         if 0 < debt <= money:
+#             break
+#     first = randint(1, 6) + randint(1, 6)
+#     print('玩家摇出了%d点' % first)
+#     if first == 7 or first == 11:
+#         print('玩家胜!')
+#         money += debt
+#     elif first == 2 or first == 3 or first == 12:
+#         print('庄家胜!')
+#         money -= debt
+#     else:
+#         needs_go_on = True
+#     while needs_go_on:
+#         needs_go_on = False
+#         current = randint(1, 6) + randint(1, 6)
+#         print('玩家摇出了%d点' % current)
+#         if current == 7:
+#             print('庄家胜')
+#             money -= debt
+#         elif current == first:
+#             print('玩家胜')
+#             money += debt
+#         else:
+#             needs_go_on = True
+# print('你破产了, 游戏结束!')
+# print('最高筹码%d'%top)
+
+m = int(input('m = '))
+n = int(input('n = '))
+fm = 1
+for num in range(1, m + 1):
+    fm *= num
+fn = 1
+for num in range(1, n + 1):
+    fn *= num
+fm_n = 1
+for num in range(1, m - n + 1):
+    fm_n *= num
+print(fm // fn // fm_n)
+
+#优化
+import math
+m = int(input('m = '))
+n = int(input('n = '))
+print(math.factorial(m)/math.factorial(n)/math.factorial((m-n)))
+
+def gcd(x,y):
+    (x,y) = (y,x) if x > y else (x,y)
+    for factor in range(x,0,-1):
+        if x % factor == 0 and y % factor == 0:
+            return factor
+def lcm(x,y):
+    return x * y /gcd(x,y)
+
+def is_palindrome(num):
+    temp = num
+    total = 0
+    while temp > 0:
+       total = temp % 10 + total * 10
+       temp //= 10
+    return total == num
+'''
+#
+# s1 = '\'hello, world!\''
+# s2 = '\n\\hello, world!\\\n'
+#
+# print(s1, s2, end='')
+# s1 = '\141\142\143\x61\x62\x63'
+# s2 = '\u9a86\u660a'
+# print(s1, s2)
+# s1 = r'\'hello, world!\''
+# s2 = r'\n\\hello, world!\\\n'
+# print(s1, s2, end='')
+#
+# str1 = 'hello, world!'
+# # 通过内置函数len计算字符串的长度
+# print(len(str1)) # 13
+#
+# print(str1.find('d'))
+# # 将字符串以指定的宽度居中并在两侧填充指定的字符
+# print(str1.center(50, '*'))
+# # 将字符串以指定的宽度靠右放置左侧填充指定的字符
+# print(str1.rjust(50, ' '))
+#
+# str2 ='   jackfrued@163.com '
+# print(str2)
+# print(str2.strip())
+# str3 = 'abc123456'
+#
+# print(str3.isdigit())
+# print(str3.isalpha())
+# print(str3.isalnum())
+# a, b = 5, 10
+# print('%d * %d = %d' % (a, b, a * b))
+# #简化
+#
+# a, b = 5, 10
+# print(f'{a} * {b} = {a*b}')
+#
+# list1 = [1, 3, 5, 7, 100]
+# for index in range(len(list1)):
+#     print(list1[index])
+#
+# for index, elem in enumerate(list1):
+#     print(index, elem)
+# print(list1)
+#
+# list1 = [1, 3, 5, 7, 100]
+# # 添加元素
+# list1.append(200)
+# print(list1)
+# list1.insert(1, 400)
+# # print(list1)
+# # list1.extend([1,11,111,1111])
+# print(list1)
+# list1 += [1,11,111,1111]
+# print(list1)
+#
+# if 1234 in list1:
+#     list1.remove(1234)
+# print(list1)
+# if 3 in list1:
+# 	list1.remove(3)
+# print(list1)
+# print(sys.getsizeof(list1))
+# f = [x ** 2 for x in range(1, 1000)]
+# print(sys.getsizeof(f))
+#
+#
+# #为什么使用yield
+# # 生成器实现
+# def foo(num):
+#     print("starting...")
+#     while num<10:
+#         num=num+1
+#         yield num
+#
+# for n in foo(0):
+#     print(n)
+# #############range 和 yield 对比
+# for n in range(10):
+#     a=n
+#     print(a) # 相当于 return a
+# print("*" * 100)
+#
+# for n in range(10):
+#      a = n
+#      print(a)
+#
+# def foo1(num):
+#     while num < 100:
+#         num = num +1
+#         yield num
+#
+# for n in foo1(0):
+#     print(n)
+#
+# # 创建集合的字面量语法
+# set1 = {1, 2, 3, 3, 3, 2}
+# print(set1)
+# print('Length =', len(set1))
+# # 创建集合的构造器语法(面向对象部分会进行详细讲解)
+# set2 = set(range(1, 10))
+# set3 = set((1, 2, 3, 3, 2, 1))
+# print(set2, set3)
+# # 创建集合的推导式语法(推导式也可以用于推导集合)
+# set4 = {num for num in range(1, 100) if num % 3 == 0 or num % 5 == 0}
+# print(set4)
+#
+# set1.add(4)
+# set1.add(5)
+# set2.update([11, 12])
+# set2.discard(5)
+# if 4 in set2:
+#     set2.remove(4)
+# print(set1, set2)
+# print(set3.pop())
+# print(set3)
+#
+# # 创建字典的字面量语法
+# scores = {'骆昊': 95, '白元芳': 78, '狄仁杰': 82}
+# print(scores)
+# # 创建字典的构造器语法
+# items1 = dict(one=1, two=2, three=3, four=4)
+# # 通过zip函数将两个序列压成字典
+# items2 = dict(zip(['a', 'b', 'c'], '123'))
+# # 创建字典的推导式语法
+# items3 = {num: num ** 2 for num in range(1, 10)}
+# print(items1, items2, items3)
+# # 通过键可以获取字典中对应的值
+# print(scores['骆昊'])
+# print(scores['狄仁杰'])
+# # 对字典中所有键值对进行遍历
+# for key in scores:
+#     print(f'{key}: {scores[key]}')
+# # 更新字典中的元素
+# scores['白元芳'] = 65
+# scores['诸葛王朗'] = 71
+# scores.update(冷面=67, 方启鹤=85)
+# print(scores)
+# if '武则天' in scores:
+#     print(scores['武则天'])
+# print(scores.get('武则天'))
+# # get方法也是通过键获取对应的值但是可以设置默认值
+# print(scores.get('武则天', 60))
+# print(scores)
+# # 删除字典中的元素
+# print(scores.popitem())
+# print(scores.popitem())
+# print(scores.pop('骆昊', 100))
+# print(scores)
+# # 清空字典
+# scores.clear()
+# print(scores)
+#
+# from math import sqrt
+#
+#
+# class Point(object):
+#
+#     def __init__(self, x=0, y=0):
+#         """初始化方法
+#
+#         :param x: 横坐标
+#         :param y: 纵坐标
+#         """
+#         self.x = x
+#         self.y = y
+#
+#     def move_to(self, x, y):
+#         """移动到指定位置
+#
+#         :param x: 新的横坐标
+#         "param y: 新的纵坐标
+#         """
+#         self.x = x
+#         self.y = y
+#
+#     def move_by(self, dx, dy):
+#         """移动指定的增量
+#
+#         :param dx: 横坐标的增量
+#         "param dy: 纵坐标的增量
+#         """
+#         self.x += dx
+#         self.y += dy
+#
+#     def distance_to(self, other):
+#         """计算与另一个点的距离
+#
+#         :param other: 另一个点
+#         """
+#         dx = self.x - other.x
+#         dy = self.y - other.y
+#         return sqrt(dx ** 2 + dy ** 2)
+#
+#     def __str__(self):
+#         return '(%s, %s)' % (str(self.x), str(self.y))
+#
+#
+# def main():
+#     p1 = Point(3, 5)
+#     p2 = Point()
+#     print(p1)
+#     print(p2)
+#     p2.move_by(-1, 2)
+#     print(p2)
+#     print(p1.distance_to(p2))
+#     print(Point.distance_to(p1,p2))
+#
+# if __name__ == '__main__':
+#     main()
+#
+
+class Person(object):
+
+    def __init__(self, name, age):
+        self._name = name
+        self._age = age
+
+    # 访问器 - getter方法
+    @property
+    def name(self):
+        return self._name
+
+    # 访问器 - getter方法
+    @property
+    def age(self):
+        return self._age
+
+    # 修改器 - setter方法
+    @age.setter
+    def age(self, age):
+        self._age = age
+
+    def play(self):
+        if self._age <= 16:
+            print('%s正在玩飞行棋.' % self._name)
+        else:
+            print('%s正在玩斗地主.' % self._name)
+
+
+def main():
+    person = Person('王大锤', 12)
+    person.play()
+    person.age = 22
+    person.play()
+    # person.name = '白元芳'  # AttributeError: can't set attribute
+
+
+if __name__ == '__main__':
+    main()
+    import tkinter
+    import tkinter.messagebox
+
+
+    def main():
+        flag = True
+
+        # 修改标签上的文字
+        def change_label_text():
+            nonlocal flag
+            flag = not flag
+            color, msg = ('red', 'Hello, world!') \
+                if flag else ('blue', 'Goodbye, world!')
+            label.config(text=msg, fg=color)
+
+        # 确认退出
+        def confirm_to_quit():
+            if tkinter.messagebox.askokcancel('温馨提示', '确定要退出吗?'):
+                top.quit()
+
+        # 创建顶层窗口
+        top = tkinter.Tk()
+        # 设置窗口大小
+        top.geometry('240x160')
+        # 设置窗口标题
+        top.title('小游戏')
+        # 创建标签对象并添加到顶层窗口
+        label = tkinter.Label(top, text='Hello, world!', font='Arial -32', fg='red')
+        label.pack(expand=1)
+        # 创建一个装按钮的容器
+        panel = tkinter.Frame(top)
+        # 创建按钮对象 指定添加到哪个容器中 通过command参数绑定事件回调函数
+        button1 = tkinter.Button(panel, text='修改', command=change_label_text)
+        button1.pack(side='left')
+        button2 = tkinter.Button(panel, text='退出', command=confirm_to_quit)
+        button2.pack(side='right')
+        panel.pack(side='bottom')
+        # 开启主事件循环
+        tkinter.mainloop()
+
+
+    if __name__ == '__main__':
+        main()
+
+
+import Pygame
+
+
+def main():
+    # 初始化导入的pygame中的模块
+    pygame.init()
+    # 初始化用于显示的窗口并设置窗口尺寸
+    screen = pygame.display.set_mode((800, 600))
+    # 设置当前窗口的标题
+    pygame.display.set_caption('大球吃小球')
+    running = True
+    # 开启一个事件循环处理发生的事件
+    while running:
+        # 从消息队列中获取事件并对事件进行处理
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+
+if __name__ == '__main__':
+    main()
